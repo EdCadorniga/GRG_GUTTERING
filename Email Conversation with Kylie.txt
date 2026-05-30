@@ -1,0 +1,106 @@
+
+Katwill Services
+Attachments
+4:32 AM (14 hours ago)
+to me, Katwill
+
+Hi Ed,
+
+Couple of questions to see if we can do below;
+
+Chargeable to Me 
+Can you see if we can utilise an API to get the Job Locations from “The Customer Factor CRM and add them to Sites on a Customer in SM8” - Looks like Job Location is on the History so this could be a way to. Get the information as well
+Add Job History Notes - (Attached File to relevant SM8 Customer) - All Customers have been uploaded as of this morning
+Add Prospects as Notes - (Attached File to relevant SM8 Customer) - All Customers have been uploaded as of this morning
+
+Quotation for Customisation for Customer - On My Server
+When a quote is opened by the customer they get an email (Like Attached)
+When a quote is accepted by the customer they get an email (Like Attached)
+
+Thank you,
+
+Kylie Bradfield 
+image3.jpeg
+📆 Book a Meeting
+
+📞 0405 135 460
+
+᯽ www.katwillservices.com.au
+
+✉️ info@katwillservices.com.au
+
+📍 Maitland NSW Australia
+
+ 4 Attachments
+  •  Scanned by Gmail
+
+Edmundo Cadorniga
+6:07 AM (12 hours ago)
+Hi Kylie, These are just based on my research: For 1: The Customer Factor does not have an API at all. What they do have is a push-only system using outbound we
+
+Katwill Services
+6:14 AM (12 hours ago)
+to me
+
+Thanks Ed,
+
+Please see below in red
+
+Thank you,
+Kylie Bradfield 
+image3.jpeg
+📆 Book a Meeting
+
+📞 0405 135 460
+
+᯽ www.katwillservices.com.au
+
+✉️ info@katwillservices.com.au
+
+📍 Maitland NSW Australia
+
+From: Edmundo Cadorniga <edmundocadorniga@gmail.com>
+Date: Saturday, 30 May 2026 at 8:07 am
+To: Katwill Services <info@katwillservices.com.au>
+Subject: Re: GRD Guttering New Account - SM8 Set Up Questions and Quote
+
+Hi Kylie, 
+
+These are just based on my research:
+For 1:
+The Customer Factor does not have an API at all. What they do have is a push-only system using outbound webhooks and CSV exports.
+Because we cannot actively "pull" data out of their system, we cannot use an API to fetch past job history. However, we can still solve this by doing it in two simple steps:
+For Past History: We will use the Job History CSV from The Customer Factor and upload it into n8n to automatically create the Sites in ServiceM8. - Lets do this but is there a way to review that they are going onto the correct customers before we say yes do it
+For Future Jobs: We will set up a Webhook in The Customer Factor. Every time a new job is saved, it will instantly push that location data to n8n and add it to ServiceM8 automatically.  (Or use 1 again for the delta after we've added the first batch).  Not going to be needed as SM8 is replacing Customer Factor
+For 2 and 3:
+Option 1: Adding Data as Notes (Activity Feed) Prefer Option 2
+"We can process your CSV files through n8n and add the Job History and Prospect details directly into the customer’s Activity Feed as Notes [1].
+How it works: n8n will read your CSV rows, find the matching customer in ServiceM8, and post the text directly onto their timeline [1].
+The Benefit: The information is instantly visible right on the main customer screen. Your staff can read the historical notes immediately without clicking into any sub-folders.
+The Downside: If the history notes are very long, it can clutter the timeline and make daily operational updates harder to see."
+Option 2: Adding Data as Attachments (Files) Would prefer this option as a PDF
+"Alternatively, we can use n8n to convert your CSV data into actual Document Files (like text files or PDFs) and attach them to the customer record [1].
+How it works: n8n will take the text from each CSV row, package it into an individual file (e.g., Historical_Notes.txt), and upload it straight to the ServiceM8 /Attachment API endpoint [1].
+The Benefit: It keeps the main customer timeline completely clean and uncluttered. It serves as a permanent, unalterable archive of your old data [1].
+The Downside: Staff will need to click into the 'Attachments' tab on the customer record to open and view the historical information."
+Question regarding the Quotes, were those generated from 'The Customer Factor'?  If they switch to ServiceM8, will they be using ServiceM8 quotes or another app such as Pandadoc? We can also create custom quotes for them if that is needed.  They will be using SM8 Proposals and Quotes, more proposals then the PDF quote but will need to work on both
+
+
+For direct answer to getting alerts:  If they are to use Pandadoc, yes, we can automate notifications.  ServiceM8 does not offer tracking of quotes but I found a workaround. The details of the workaround are below: 
+============================
+No, ServiceM8 does not natively track or send a notification when a client opens or views a quote.
+While ServiceM8 provides automated tracking for when a quote is sent or accepted, it lacks an underlying event or webhook trigger for when the online portal link is simply clicked or opened. [1, 2, 3]
+However, you can still easily achieve this exact feature for your client by using a quick workaround inside your n8n setup.
+The n8n Workaround: Redirect Link Tracking
+Instead of sending the raw ServiceM8 quote link directly to the customer, you use n8n as a hidden tracking bridge:
+The Custom Link: When a quote is generated, you have n8n generate a custom tracking URL (e.g., https://your-n8n-server.com) and place it into the ServiceM8 email template instead of the standard {document} tag. [1]
+The Open Trigger: The exact millisecond the customer clicks that link, it triggers your n8n workflow first. n8n immediately notes down that the quote was opened and triggers your automated "Quote Opened" notification email.
+The Instant Pass-Through: In less than a second, n8n instantly redirects the customer's browser straight to their actual, secure ServiceM8 online quote portal so they can view and sign it seamlessly. [1]
+============================
+I have not tried that workaround before - that would be good for any customer that doesn't want to use Pandadoc anymore. 
+
+Regards,
+
+Ed Cadorniga
+Business Automations and Integrations
+edmundocadorniga@gmail.com
