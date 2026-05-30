@@ -20,6 +20,23 @@ The conversation with Kylie establishes these key points:
 - `Accepted quote email notification.pdf`
 - `Quote opened email notification.pdf`
 
+## Implementation Status
+### Done
+- The repository documentation now reflects the current GRD workflow design and decision history.
+- Lightweight sample references exist for both CSV exports: `Customer Job History-sample.csv` and `prospects-sample.csv`.
+- n8n workflows have been created for historical job staging, prospect staging, review workbook initialization, and quote notifications.
+- Quote-open tracking is implemented as a redirect bridge that logs the event before forwarding to the live quote URL.
+
+### In Progress
+- A Google Sheets review-sync workflow still needs to be built so canonical rows can be written into the workbook tabs.
+- A ServiceM8 writeback workflow still needs to be built for approved history and prospect rows.
+- Customer matching, duplicate handling, and approval-state propagation still need to be wired end to end.
+
+### Next Steps
+- Create the review-sync workflow that pushes canonical rows from Postgres into the GRD review workbook.
+- Build the approval-readback workflow that pulls `Approved` rows from Sheets/Postgres and writes them to ServiceM8.
+- Validate a small sample set end to end before any full import.
+
 ## Data Observations
 ### Customer Job History
 - 24,870 rows

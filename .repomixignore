@@ -1,0 +1,60 @@
+# ====================================================================
+# REPOMIX TARGETED DATA BLOCKS (Protects Your Token Budget)
+# ====================================================================
+# Block the massive database files inflating your context
+Customer Job History.csv
+prospects-2026-05-23.csv
+
+# Block recursive output files so repomix never bundles itself
+repomix-output.md
+repo-map.md
+
+# Block all general large spreadsheet files 
+# (Except files explicitly named with "-sample.csv" or "-schema.csv")
+*.[cC][sS][vV]
+*.[xX][lL][sS]*
+!*-sample.csv
+!*-schema.csv
+
+# ====================================================================
+# STANDARD DEVELOPMENT & OS CLEANUP
+# ====================================================================
+# Windows System Files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# OneDrive & Cloud Sync Metadata
+.ODS/
+*.tmp
+~$*
+
+# Node / Package Manager Cache
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.npm/
+
+# Environment / Secret Keys
+.env
+.env.*
+*.pem
+*.key
+*.secret
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Log Files & Terminal Dumps
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
