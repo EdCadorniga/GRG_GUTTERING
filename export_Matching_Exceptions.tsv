@@ -1,0 +1,2 @@
+Source_Table	Record_Id	Customer_Name	Match_Field	Match_Value	Issue_Description	Resolved	Resolution_Notes	_matched
+Job History		Test API Format2	Customer_Name	Test API Format2	No matching company found in ServiceM8 (exact match only)	No		FALSE

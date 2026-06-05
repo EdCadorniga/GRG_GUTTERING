@@ -1,0 +1,702 @@
+[
+  {
+    "customer_name": "Baxter Homes",
+    "sm8_company_uuid": "0021c88f-f2be-41a6-9d8d-243b7347909b",
+    "site_address": "2 Joule Place  Mardi NSW 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "The Pixel Run",
+    "sm8_company_uuid": "004163b1-8481-4a7d-a1b0-243b719cebfb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Cerebral Palsy Alliance",
+    "sm8_company_uuid": "00462b6f-29dd-4e60-adba-243b7db61bcb",
+    "site_address": "PO Box 171  Forestville NSW 2087",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Bulk Nutrients",
+    "sm8_company_uuid": "004d4e2e-cfdb-4518-9190-243b74781f9b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Shaun Callinan",
+    "sm8_company_uuid": "005f5661-6670-409f-9b5a-243b739edb8b",
+    "site_address": "61 Fullerton Street  Stockton NSW 2295",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Wiseberry Property Management",
+    "sm8_company_uuid": "0088ae98-874a-47b5-8869-243b7412cfab",
+    "site_address": "NSW",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Rebekah Greene",
+    "sm8_company_uuid": "009de8ef-4ca9-4586-9371-243b7faf919b",
+    "site_address": "59 Oberton Street  Kincumber NSW 2251",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Motion Asia Pacific (Hardy Spicer CBC)",
+    "sm8_company_uuid": "00a296d3-f5a0-4c70-9b7f-243b70b7d5ab",
+    "site_address": "2 Canavan Drive  Beresfield NSW 2322",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Tuneworks",
+    "sm8_company_uuid": "00a5b131-ff42-479f-9e70-243b765ccb7b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "BAD Workwear",
+    "sm8_company_uuid": "00ac88fe-546d-4643-a26b-243b76ebf03b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Superclean Commercial",
+    "sm8_company_uuid": "00c5068d-c289-4eb5-9de6-243b726efa0b",
+    "site_address": "59 Ocean View Drive  Wamberal NSW 2260",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "OT Rehab Consulting",
+    "sm8_company_uuid": "012bf5a5-5098-404d-b50b-243b794cdf7b",
+    "site_address": "Level 17, 1 Denison Street  North Sydney NSW 2060",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Glennis Lewis",
+    "sm8_company_uuid": "0134980d-5b71-4db8-a887-243b77075f6b",
+    "site_address": "5 Romford Close  Rankin Park Nsw 2287",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Jenni Payne",
+    "sm8_company_uuid": "013632a1-915a-4110-9627-243b7adae18b",
+    "site_address": "39 Hobart Road  New Lambton New South Wales 2305",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Stephanie Zhang",
+    "sm8_company_uuid": "01709d9f-9e17-4deb-9cd4-243b7491e8db",
+    "site_address": "17 Heritage Drive  Kanwal NSW 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Serena Myers",
+    "sm8_company_uuid": "01933f0a-ee94-4d4e-9eed-243b7365dfeb",
+    "site_address": "398 Tuggerawong Rd  Tuggerawong NSW 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Alistair McArthur",
+    "sm8_company_uuid": "01ba972a-6165-4f55-b282-243b7a707a2b",
+    "site_address": "70 Throsby Street  Tighes Hill NSW 2297",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Richard & Allyson Kerfoot",
+    "sm8_company_uuid": "0206e17b-fd26-4ec4-8e4b-243b7c48aceb",
+    "site_address": "6 Turpentine Close  Pokolbin NSW 2320",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Joshua Antill",
+    "sm8_company_uuid": "02137c79-6ead-4c73-9a5f-243f91bf967b",
+    "site_address": "10 Rae st  Birmingham gardens NSW 2287",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Karen Smith",
+    "sm8_company_uuid": "026fea64-8690-45f1-81a7-243b739ae2eb",
+    "site_address": "100 Diamond Head Drive  Budgewoi NSW 2262",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Megan Hamilton",
+    "sm8_company_uuid": "02867180-1401-4cf9-91ec-243b7ee40f5b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Rosalind O'Shea",
+    "sm8_company_uuid": "02b8bf78-3801-4411-b3f9-243b7d1b6e1b",
+    "site_address": "9 Ulana Ave Halekulani NSW 2262  Halekulani NSW 2262",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Hydraulink",
+    "sm8_company_uuid": "02d6a00f-86b3-4651-9b74-243b711c093b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Louise Swadling",
+    "sm8_company_uuid": "03167fea-64c5-4b3d-a828-243b7983a96b",
+    "site_address": "4 Fitzroy Road  Lambton NSW 2299",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Fiona Watts",
+    "sm8_company_uuid": "035133fc-6381-48ff-aac6-243b7ca0fd0b",
+    "site_address": "13 Iranda ave  Niagra Park NSW 2250",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Shayne Player",
+    "sm8_company_uuid": "038ea207-78e0-41cf-b431-243b72ae34eb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Efi Krimizis",
+    "sm8_company_uuid": "03917872-27d8-4c49-ad62-243b78d7ef8b",
+    "site_address": "49 Bay Road, The Entrance NSW, Australia  The Entrance NSW 2261",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Helen Beddow",
+    "sm8_company_uuid": "03936fb3-4fdc-4d10-ad94-243f9a1a97db",
+    "site_address": "Apartment 17, 15 Warner Street  Warners Bay NSW 2282",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Commbank",
+    "sm8_company_uuid": "039513f2-1e0a-4263-834d-243b77af329b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Allison Allen",
+    "sm8_company_uuid": "03b0fa94-400f-4f55-a6aa-243f9061892b",
+    "site_address": "259 Avoca Drive  Green Point NSW 2251",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Frances Alter",
+    "sm8_company_uuid": "03c65729-30a7-4e6b-9ef6-243f9690333b",
+    "site_address": "3 Amethyst Ave  Pearl Beach NSW 2256",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Anoop Enjeti",
+    "sm8_company_uuid": "03ed4061-8350-49c5-b6f0-243b72b7758b",
+    "site_address": "49 Albert St  Warners Bay NSW 2282",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Club Projects Newcastle PTY LTD",
+    "sm8_company_uuid": "03f44488-8a49-4106-a295-243b7293da2b",
+    "site_address": "35 Darby Street  Newcastle NSW 2300",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Glass Alley",
+    "sm8_company_uuid": "03f9027e-0cf6-4686-b7bb-243b71b1bb2b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Hunter Property Management",
+    "sm8_company_uuid": "040152a6-a914-4e8b-b617-243b7ca82a0b",
+    "site_address": "North Rothbury NSW 2335",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Ray White",
+    "sm8_company_uuid": "04015c03-862b-44ca-9274-243b7de1bcdb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Kylie",
+    "sm8_company_uuid": "040755a5-406d-4af2-9820-243f97c9facb",
+    "site_address": "151 buff point avenue buff point  buff point",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Rhonda Bates",
+    "sm8_company_uuid": "040e3f61-17a3-45dd-b634-243f9a1a4ccb",
+    "site_address": "25 Captain Cook Crescent  Long Jetty NSW 2261",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Terry & Pam Moore",
+    "sm8_company_uuid": "040f0648-2987-44a6-b5af-243b7e76840b",
+    "site_address": "13 Charlton street  Eleebana Nsw 2282",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Alex Pudney",
+    "sm8_company_uuid": "041ef518-4998-4ea6-ab6d-243b786b3adb",
+    "site_address": "333 Gan Gan Road  Boat Harbour NSW 2316",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "George Mendria",
+    "sm8_company_uuid": "04383b55-063f-4519-b112-243b77cd522b",
+    "site_address": "2 Mount View Place  North Wahroonga NSW 2076",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Buildart Projects",
+    "sm8_company_uuid": "044b9252-8580-45eb-891b-243b7198699b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Angela Jones",
+    "sm8_company_uuid": "0459696c-d242-48c5-9365-243b73c0f3cb",
+    "site_address": "2 Buckingham Street  Valentine NSW 2280",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Lachlan Walker",
+    "sm8_company_uuid": "0459b8a6-567d-4b79-88c6-243b7872006b",
+    "site_address": "5 Margherita Avenue  Bateau Bay NSW 2261",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Ashley McGrath",
+    "sm8_company_uuid": "045a709b-fd57-4fa8-8f79-243b7f25783b",
+    "site_address": "20 Georgia Drive  HAMLYN TERRACE NSW 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Di Beaton",
+    "sm8_company_uuid": "046895f8-5038-4b10-ba75-243f99d4aedb",
+    "site_address": "6 Advance Drive  Woodrising Nsw 2284",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Mary Glenn",
+    "sm8_company_uuid": "047c5673-537a-422b-870a-243b7f8082eb",
+    "site_address": "61 Cove Blvd  North Arm Cove NSW 2324",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Mick James",
+    "sm8_company_uuid": "0493344f-c159-4ce2-83e8-243b79a3df5b",
+    "site_address": "13 lakala avenue  Springfield NSW 2250",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Cecilia Allison",
+    "sm8_company_uuid": "04a70c6a-8ab4-4c2a-b196-243b7306fd2b",
+    "site_address": "44 Tooke Street  Cooks Hill NSW 2300",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Beverly Pearson",
+    "sm8_company_uuid": "04f0620d-083d-4628-94f1-243b72cbf60b",
+    "site_address": "81 Merewether Street  Merewether NSW 2291",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Chad Lawrence",
+    "sm8_company_uuid": "051ffe99-55de-4729-8c21-243b72a6855b",
+    "site_address": "8 Lake Forest Drive  Murrays Beach NSW 2281",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Olive and Oregano Bar",
+    "sm8_company_uuid": "05923490-4865-48bb-bfdd-243b7d3a46cb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "David Kerr",
+    "sm8_company_uuid": "05996643-dceb-429e-9b37-243b750c832b",
+    "site_address": "36 Norfolk Street  Fern Bay NSW 2295",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Neil Morcombe",
+    "sm8_company_uuid": "05c337eb-a0f3-445b-9182-243b7272f90b",
+    "site_address": "72 Teragalin Drive  Chain Valley Bay NSW 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Adam Hyman",
+    "sm8_company_uuid": "05f68192-ed3f-4edc-b8ae-243b740104db",
+    "site_address": "74 Melville Street  Kincumber NSW 2251",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Bradstreet Parts",
+    "sm8_company_uuid": "0601610e-0e9c-4946-adfd-243b738ee3db",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Eco Tec Auto",
+    "sm8_company_uuid": "0644390f-384e-46c0-91b5-243b7257ee4b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Travis Wearne",
+    "sm8_company_uuid": "0661c38c-6f62-40fd-a6d5-243b7912c1bb",
+    "site_address": "79 Ronald Avenue  Shoal Bay NSW 2315",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Maggie King",
+    "sm8_company_uuid": "06794397-1f5b-45dd-9bab-243b70fbb89b",
+    "site_address": "49 Panorama Terrace  Green Point NSW 2251",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Lisa Foster",
+    "sm8_company_uuid": "068b7795-c6be-41aa-893f-243b7e32496b",
+    "site_address": "96 Berrys Head Road  Wyoming NSW 2250",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "CSTM Coastal Strata - Terrigal",
+    "sm8_company_uuid": "068faada-1557-4c69-9533-243b7e32569b",
+    "site_address": "1 Terrigal Esplanade  Terrigal NSW 2260",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Anne Maree",
+    "sm8_company_uuid": "06ab54de-f5c1-4365-8300-243f9ef3893b",
+    "site_address": "27 Woodport Close  Green Point NSW 2251",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Terence Vandeleur",
+    "sm8_company_uuid": "06d7f3e8-e153-4a20-aad4-243b732c0a6b",
+    "site_address": "35 Championship Drive  Wyong NSW 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "ISMAPNG (Institute of Sisters of Mercy)",
+    "sm8_company_uuid": "06da4db3-b736-4ee9-8d13-243b7f9b7b4b",
+    "site_address": "33 Myrtle Street  Stanmore NSW 2048",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Kylie Matheson",
+    "sm8_company_uuid": "06dc10f2-095a-498e-bbcb-243b78de223b",
+    "site_address": "18 De L‚ÄôIsle Drive  Watanobbi Nsw 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Andrew Streat",
+    "sm8_company_uuid": "06f57b45-1c60-4a9a-962f-243b7910d0ab",
+    "site_address": "10 Moonah Avenue  Charlestown NSW 2290",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Hayley Spencer",
+    "sm8_company_uuid": "06fa72df-15f9-4286-8dec-243b75b544eb",
+    "site_address": "46 Bourbon Street  WYOMING NSW 2250",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Berlina Projects",
+    "sm8_company_uuid": "070fe8b6-b83a-4663-9ef4-243b71bb92db",
+    "site_address": "27 Toohey Road  Wetherill Park NSW 2164",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Jesse Fildes",
+    "sm8_company_uuid": "071ed3b0-e93f-473d-ac48-243b705088bb",
+    "site_address": "25 Robert Street  Argenton NSW 2284",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Andrea Schofield",
+    "sm8_company_uuid": "07874f31-1347-4ece-b234-243b75a31c3b",
+    "site_address": "11 Carisbrooke Ave  New Lambton Heights NSW 2305",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Coast Community Connections",
+    "sm8_company_uuid": "07cba7d1-645e-4c49-a3b6-243b78a8178b",
+    "site_address": "B1 University of Newcastle Ourimbah Campus Loop Rd Ourimbah NSW 2258",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Tim Starkey",
+    "sm8_company_uuid": "07d96bc0-d9f4-4ce5-9294-243b7a0ed5fb",
+    "site_address": "11 Desreaux Close  Eleebana NSW 2282",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Tracey Scriven",
+    "sm8_company_uuid": "07e34879-c3c8-4f07-aa66-243b7885a92b",
+    "site_address": "67 Hastings Road  Terrigal NSW 2260",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Barister Brew",
+    "sm8_company_uuid": "07ea6a08-7ebe-41e0-8376-243b74ee6c6b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Warren Bolton",
+    "sm8_company_uuid": "080df092-e07b-40c8-85cd-243b7a93f1bb",
+    "site_address": "20 Wambina Rd  MATCHAM NSW 2250",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Terri Davies",
+    "sm8_company_uuid": "082830f3-d1ca-422a-9ecb-243b7d96179b",
+    "site_address": "44 Nacooma Road  Buff Point NSW 2262",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Donna Carney",
+    "sm8_company_uuid": "08490c28-6641-4f90-82d1-243b767f3f8b",
+    "site_address": "165 Princeton Avenue  Adamstown Heights NSW 2289",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Sparesbox",
+    "sm8_company_uuid": "0867b9f7-6664-4d76-a040-243b7f5cd3eb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "A1 Autoparts",
+    "sm8_company_uuid": "088c937f-3bfa-460f-b99a-243b7c32147b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Greg Chrystal",
+    "sm8_company_uuid": "0890e388-423a-4143-a92d-243b7b898c5b",
+    "site_address": "49 Tuggerawong rd  Wyongah NSW 2258",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Commonwealth Bank",
+    "sm8_company_uuid": "0895236b-9eed-4474-8804-243b720327fb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Craig & Candice",
+    "sm8_company_uuid": "08a66461-6db9-4f27-9617-243f9e02028b",
+    "site_address": "25 Aldinga Drive  Wamberal NSW 2260",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Sas Dekoeyer",
+    "sm8_company_uuid": "08ab6c26-6408-40f3-b459-243b7591333b",
+    "site_address": "44 Admiralty Avenue  Tanilba Bay NSW 2319",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Tristian Reed",
+    "sm8_company_uuid": "08b45675-79a1-4c68-81ce-243b7ab6cd6b",
+    "site_address": "32 McDonald St  Killcare NSW 2257",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Barrington Bakery",
+    "sm8_company_uuid": "08e5993d-b6c8-42f9-851a-243b712fda0b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Found HQ",
+    "sm8_company_uuid": "08f11e22-5afc-4fb9-b53a-243b73e171fb",
+    "site_address": "157 Darby Street  Cooks Hill NSW 2300",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Cathy Evans",
+    "sm8_company_uuid": "08f1b656-cf1d-4643-87f0-243b750ceb5b",
+    "site_address": "105 Heath Road  Pretty Beach NSW 2257",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Robyn Rossiter",
+    "sm8_company_uuid": "09185008-a5fd-467a-a9ac-243b71cbd6cb",
+    "site_address": "53 Stevenson Place  Newcastle NSW 2300",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Rydges",
+    "sm8_company_uuid": "093571eb-6d19-4f1d-a4e3-243b7c2747bb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Nick Goodwin",
+    "sm8_company_uuid": "0939ce93-244b-48dd-a764-243b70ee0e3b",
+    "site_address": "328 Scenic Highway  Terrigal NSW 2260",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "David Meldrum",
+    "sm8_company_uuid": "094e10bc-b0e2-4f94-b3db-243b7a7999fb",
+    "site_address": "2 Gowrie Place  Watanobbi NSW 2259",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Arash Rezaeikallaj",
+    "sm8_company_uuid": "0951136e-57f9-45d5-87de-243b79c7d34b",
+    "site_address": "66 Tirriki street  Charlestown NSW 2290",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Kath Donnelly",
+    "sm8_company_uuid": "0953f576-e984-4b87-b491-243b79c0e2cb",
+    "site_address": "4 Kempster Road  Merewether NSW 2291",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Frontline hobbies",
+    "sm8_company_uuid": "0958904c-651b-4c0f-b317-243b7134b8db",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Wipertech",
+    "sm8_company_uuid": "098f8793-51a8-4940-91b1-243b719d361b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Gosford Regional Art Gallery",
+    "sm8_company_uuid": "099132a6-4261-42ef-a5f7-243b7e20cf0b",
+    "site_address": "36 Webb Street  East Gosford NSW 2250",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Adam Dipper",
+    "sm8_company_uuid": "09ac5e41-f31a-4740-955d-243b7cccf7ab",
+    "site_address": "12 Korina Avenue,  Umina Beach, NSW 2257",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Ink hub",
+    "sm8_company_uuid": "09b0ed2b-688d-4e98-af9f-243b7ac53b8b",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "Tom Teale-Sinclair",
+    "sm8_company_uuid": "09bcdffe-8055-4f42-8e05-243b7789c35b",
+    "site_address": "1 Sycamore Ave  Bateau Bay NSW 2261",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  },
+  {
+    "customer_name": "The Coffee Club",
+    "sm8_company_uuid": "09be602d-77be-410c-8096-243b7d67a3cb",
+    "site_address": "",
+    "source_table": "sm8_companies",
+    "ingested_at": "2026-06-01T14:54:26.286Z"
+  }
+]

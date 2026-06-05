@@ -1,0 +1,35 @@
+{
+  "position": [
+    224,
+    0
+  ],
+  "name": "Fetch ServiceM8 Sites",
+  "parameters": {
+    "specifyQuery": "keypair",
+    "queryParameters": {
+      "parameters": [
+        {
+          "value": "active eq 1",
+          "name": "$filter"
+        },
+        {
+          "value": "200",
+          "name": "$limit"
+        }
+      ]
+    },
+    "genericAuthType": "oAuth2Api",
+    "authentication": "genericCredentialType",
+    "method": "GET",
+    "url": "https://api.servicem8.com/api_1.0/companysite.json",
+    "sendQuery": true
+  },
+  "type": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.4,
+  "credentials": {
+    "oAuth2Api": {
+      "id": "9xTqnOrjPITTQoxc",
+      "name": "GRD GUTTERING APP"
+    }
+  }
+}

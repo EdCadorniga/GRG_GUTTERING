@@ -1,0 +1,401 @@
+{
+  "updatedAt": "2026-06-01T16:53:24.383Z",
+  "createdAt": "2026-06-01T16:31:49.107Z",
+  "id": "N4xR57cICcFGgwuF",
+  "name": "GRD_Note_Upload_v2",
+  "description": "Upload approved/pending notes to ServiceM8 via HTTP Request with OAuth2, batched 50/2s",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "id": "02fd6dbe-dd4e-45b1-b09e-6e0aed1e1593",
+      "name": "Webhook Upload",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "grd-note-upload",
+        "options": {},
+        "responseMode": "onReceived"
+      },
+      "webhookId": "c60eb27c-20fc-4919-b8d4-0132ae0a10d7"
+    },
+    {
+      "id": "8b434a7a-0bc1-4a9f-a754-358d2ce81361",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\"spreadsheetId\":\"19CU-Ud4KGSZQtkvZoENvXen95R-7T1xRisY3aTH6j9Y\",\"notesTab\":\"Customer Notes\"}"
+      }
+    },
+    {
+      "id": "62f76ef5-be43-48ad-9473-6df89f635710",
+      "name": "Read Customer Notes",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "19CU-Ud4KGSZQtkvZoENvXen95R-7T1xRisY3aTH6j9Y"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Customer Notes"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SnkZZEvybquPKY8P",
+          "name": "Google Sheets account"
+        }
+      },
+      "executeOnce": true
+    },
+    {
+      "id": "79e87013-f142-4aa7-9b16-4f4236125a9b",
+      "name": "Filter + Prepare",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const items = $input.all();\nconst results = [];\nfor (const item of items) {\n  const j = item.json;\n  if (!j.ServiceM8_UUID || !j.Note_Content) continue;\n  if (j.Approval_Status !== \"Approved\" && j.Approval_Status !== \"Pending\") continue;\n  results.push({ json: { company_uuid: j.ServiceM8_UUID, note: j.Note_Content, author: \"GRD Historical Import\", _customer: j.Customer_Name || \"\" } });\n}\nreturn results;"
+      }
+    },
+    {
+      "id": "d25eec6d-4728-4def-8f1e-38d692cdaab4",
+      "name": "Upload to SM8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        896,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.servicem8.com/api_1.0/note.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"related_object\": \"company\", \"related_object_uuid\": $json.company_uuid, \"note\": $json.note } }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 50,
+              "batchInterval": 2000
+            }
+          },
+          "response": {
+            "response": {
+              "fullResponse": false,
+              "neverError": true,
+              "responseFormat": "text"
+            }
+          }
+        },
+        "infoMessage": ""
+      },
+      "credentials": {
+        "oAuth2Api": {
+          "id": "9xTqnOrjPITTQoxc",
+          "name": "GRD GUTTERING APP"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Upload": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Read Customer Notes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Customer Notes": {
+      "main": [
+        [
+          {
+            "node": "Filter + Prepare",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter + Prepare": {
+      "main": [
+        [
+          {
+            "node": "Upload to SM8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  },
+  "staticData": null,
+  "meta": {
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp"
+  },
+  "pinData": null,
+  "versionId": "a9b38778-4f4d-411a-8320-03d991b4f830",
+  "activeVersionId": "a9b38778-4f4d-411a-8320-03d991b4f830",
+  "versionCounter": 2,
+  "triggerCount": 1,
+  "shared": [
+    {
+      "updatedAt": "2026-06-01T16:31:49.107Z",
+      "createdAt": "2026-06-01T16:31:49.107Z",
+      "role": "workflow:owner",
+      "workflowId": "N4xR57cICcFGgwuF",
+      "projectId": "HfMlqgFS6NFMj6hI",
+      "project": {
+        "updatedAt": "2026-01-04T01:11:38.761Z",
+        "createdAt": "2026-01-04T00:26:58.522Z",
+        "id": "HfMlqgFS6NFMj6hI",
+        "name": "Automations Server <admin@sm8setup.com.au>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "d9ba4764-2b26-4c8c-862f-360bee75de23"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": {
+    "updatedAt": "2026-06-01T16:53:24.388Z",
+    "createdAt": "2026-06-01T16:53:24.388Z",
+    "versionId": "a9b38778-4f4d-411a-8320-03d991b4f830",
+    "workflowId": "N4xR57cICcFGgwuF",
+    "nodes": [
+      {
+        "id": "02fd6dbe-dd4e-45b1-b09e-6e0aed1e1593",
+        "name": "Webhook Upload",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2.1,
+        "position": [
+          0,
+          0
+        ],
+        "parameters": {
+          "httpMethod": "GET",
+          "path": "grd-note-upload",
+          "options": {},
+          "responseMode": "onReceived"
+        },
+        "webhookId": "c60eb27c-20fc-4919-b8d4-0132ae0a10d7"
+      },
+      {
+        "id": "8b434a7a-0bc1-4a9f-a754-358d2ce81361",
+        "name": "Config",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          224,
+          0
+        ],
+        "parameters": {
+          "mode": "raw",
+          "jsonOutput": "{\"spreadsheetId\":\"19CU-Ud4KGSZQtkvZoENvXen95R-7T1xRisY3aTH6j9Y\",\"notesTab\":\"Customer Notes\"}"
+        }
+      },
+      {
+        "id": "62f76ef5-be43-48ad-9473-6df89f635710",
+        "name": "Read Customer Notes",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          448,
+          0
+        ],
+        "parameters": {
+          "resource": "sheet",
+          "operation": "read",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "19CU-Ud4KGSZQtkvZoENvXen95R-7T1xRisY3aTH6j9Y"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "Customer Notes"
+          },
+          "options": {
+            "returnAllMatches": "returnAllMatches"
+          }
+        },
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "SnkZZEvybquPKY8P",
+            "name": "Google Sheets account"
+          }
+        },
+        "executeOnce": true
+      },
+      {
+        "id": "79e87013-f142-4aa7-9b16-4f4236125a9b",
+        "name": "Filter + Prepare",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          672,
+          0
+        ],
+        "parameters": {
+          "mode": "runOnceForAllItems",
+          "jsCode": "const items = $input.all();\nconst results = [];\nfor (const item of items) {\n  const j = item.json;\n  if (!j.ServiceM8_UUID || !j.Note_Content) continue;\n  if (j.Approval_Status !== \"Approved\" && j.Approval_Status !== \"Pending\") continue;\n  results.push({ json: { company_uuid: j.ServiceM8_UUID, note: j.Note_Content, author: \"GRD Historical Import\", _customer: j.Customer_Name || \"\" } });\n}\nreturn results;"
+        }
+      },
+      {
+        "id": "d25eec6d-4728-4def-8f1e-38d692cdaab4",
+        "name": "Upload to SM8",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          896,
+          0
+        ],
+        "parameters": {
+          "method": "POST",
+          "url": "https://api.servicem8.com/api_1.0/note.json",
+          "authentication": "genericCredentialType",
+          "genericAuthType": "oAuth2Api",
+          "sendBody": true,
+          "contentType": "json",
+          "specifyBody": "json",
+          "jsonBody": "={{ { \"related_object\": \"company\", \"related_object_uuid\": $json.company_uuid, \"note\": $json.note } }}",
+          "options": {
+            "batching": {
+              "batch": {
+                "batchSize": 50,
+                "batchInterval": 2000
+              }
+            },
+            "response": {
+              "response": {
+                "fullResponse": false,
+                "neverError": true,
+                "responseFormat": "text"
+              }
+            }
+          },
+          "infoMessage": ""
+        },
+        "credentials": {
+          "oAuth2Api": {
+            "id": "9xTqnOrjPITTQoxc",
+            "name": "GRD GUTTERING APP"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Webhook Upload": {
+        "main": [
+          [
+            {
+              "node": "Config",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Config": {
+        "main": [
+          [
+            {
+              "node": "Read Customer Notes",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Read Customer Notes": {
+        "main": [
+          [
+            {
+              "node": "Filter + Prepare",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Filter + Prepare": {
+        "main": [
+          [
+            {
+              "node": "Upload to SM8",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Automations Server",
+    "name": null,
+    "description": null,
+    "autosaved": false,
+    "workflowPublishHistory": [
+      {
+        "createdAt": "2026-06-01T16:53:31.801Z",
+        "id": 1670,
+        "workflowId": "N4xR57cICcFGgwuF",
+        "versionId": "a9b38778-4f4d-411a-8320-03d991b4f830",
+        "event": "activated",
+        "userId": "d9ba4764-2b26-4c8c-862f-360bee75de23"
+      }
+    ]
+  }
+}

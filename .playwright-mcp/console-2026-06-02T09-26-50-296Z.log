@@ -1,0 +1,2 @@
+[    2978ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://automation.katwillservices.com.au/rest/login:0
+[    3455ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://automation.katwillservices.com.au/signin?redirect=%252F:0
