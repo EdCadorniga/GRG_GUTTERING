@@ -70,6 +70,7 @@ The primary source files are:
 | **GRD_CF_Match_to_UUID** | **BNcVsucXZc9c0oyk** | Draft — manual trigger, reads CF contacts + SM8 UUIDs → exact name match → upserts matched rows to grd_sm8_client_uuids |
 | **GRD_CustomerSites_Generate** | **IMj5uhFkElJWDcv5** | Active — manual trigger, reads CF contacts + SM8 UUIDs → Code v2 (runOnceForAllItems) → Google Sheets append (1,647 rows written to Customer Sites tab) |
 | **GRD_Set_Approval_Validation** | **QkNVzlIMWM5nUbEq** | Draft — manual trigger, HTTP Request → Google Sheets API batchUpdate to set Approval_Status dropdown on column F |
+| **GRD_RJS_Sites_Append** | **aoNiAnCCsCTkZWLu** | Active — manual trigger, reads `rjs_sites` Data Table → Clear Sheet → Filter → Append to Customer Sites tab (3,997 rows) |
 
 #### Archived Previously (38 workflows)
 All 38 stale/superseded/draft/test GRD workflows archived. Full list includes: GRD_ReviewWorkbook_Init, GRD_CSV_to_Sheet_JobHistory, GRD_CSV_to_Sheet_Prospects, GRD_Query_ServiceM8_v3, GRD_Note_Generate (old), GRD_Note_Upload (old), GRD_Note_Upload_v2, GRD_QuoteNotifications, GRD_Note_Generate (stale copy), GRD_Note_Upload_Batch (draft), GRD_Match_CSV_to_SM8 (draft), GRD_CustomerSites_Generate (old), GRD_CustomerSites_Generate (draft 2), GRD_CustomerSites_Create, GRD_CustomerSites_Create (draft), GRD_Diagnostic_Count, GRD_Query_ServiceM8_Sites, GRD_Setup_SharedDir, GRD_Query_ServiceM8_Companies, Test Find Katwill, Test Create Note, Test PG Tables, plus 17 other stale/superseded/draft workflows.
@@ -171,6 +172,28 @@ All 38 stale/superseded/draft/test GRD workflows archived. Full list includes: G
 - OAuth scope `publish_job_notes` required
 - NOTE: Upload was performed BEFORE final clean regeneration. Notes will need re-upload if clean copies are desired.
 
+### RJS Sites Merge & UUID Backfill (Jun 2026)
+
+#### What was done
+- Received RJS Cleaning site export: 2,399 unique addresses from CSV
+- Built **GRD_RJS_Sites_Append** (`aoNiAnCCsCTkZWLu`): ManualTrigger → Clear Sheet → Get RJS Sites (Data Table) → Append to Sheet
+- Merged RJS data with existing Customer Sites tab by `Site_Address` dedup key
+- **3,997 unique addresses** after merge (all 2,399 RJS addresses already existed in sheet; RJS Site_Name preferred on match)
+- Fixed `columns.schema` error on Append node (added schema array)
+- Switched from MCP HTTP upload (wrong tool name/token audience) to REST API (`POST /api/v1/data-tables/{id}/rows`)
+- Backfilled **1,897 missing UUIDs** by matching RJS `Customer_Name` against `grd_sm8_client_uuids` (lowercased exact match)
+- **Final state**: 3,542 rows with UUID, 455 unmatched — saved to `unmatched_sites_455.json`
+- Workflow uses Data Table `rjs_sites` (latest id: `5YEAz1SyFc0Y4bxS`)
+- **Phone fix (Jun 2026)**: 1,599 phone numbers missing `'` prefix were fixed (formula errors in Google Sheets). Script: `fix_phones.py`.
+- **Approval_Status dropdown re-applied (Jun 2028)**: `GRD_Set_Approval_Validation` executed successfully — column F dropdown (Approved, Needs Review, Rejected, Pending) re-applied after sheet rewrite.
+
+#### Known issues & constraints
+- 455 Customer Sites rows remain unmatched — names in Customer Factor but absent from SM8 UUID table (no SM8 company exists yet)
+- Some RJS `Customer_Name` values are company entities (e.g. "AAI Limited T/A GIO") that won't match individual customer names
+- Phone numbers stored with `'` prefix (text format) in Google Sheet
+- RJS data has no `Customer_UUID`; UUIDs only come from CF→SM8 matching
+- Unmatched rows saved to `unmatched_sites_455.json`
+
 ### Full Project Roadmap
 1. Done - Ingest workflows
 2. Done - Review workbook init
@@ -181,15 +204,15 @@ All 38 stale/superseded/draft/test GRD workflows archived. Full list includes: G
 7. Done - Match CSV to SM8 UUIDs (1,925 exact matches, no fuzzy)
 8. Done - Generate Notes (1,712 JH + 180 PR + 202 NoRec = all 1,925 covered)
 9. Done - Upload Notes to SM8 (initial upload; re-upload needed for clean notes)
-10. Done - Customer Sites tab
+10. Done - Customer Sites tab (3,997 rows, 3,542 with UUID)
 11. Not done - Quote notifications/bridge
 12. Done - Additional columns: Job Location, Quantity, Notes in note content
 13. Done - Clean up duplicate notes (clean slate regeneration completed)
 14. Done - GRD_CF_Contacts_Ingest (15K rows ingested into stg_cf_contacts)
 15. Done - GRD_CF_Match_to_UUID (1,647 CF names matched to SM8 UUIDs)
-16. **Not done** - Id-chain fallback matching for ~2,321 unmatched CF names
-17. Done - Customer Sites sheet rows generation (1,647 rows written to Customer Sites tab)
-18. **Not done** - Site creation workflow (approved rows → SM8 API company.json)
+16. Done - RJS Sites merge + UUID backfill (1,897 new UUIDs matched)
+17. **Not done** - Id-chain fallback matching for remaining 455 unmatched site rows
+18. **Not done** - Site creation workflow (approved rows → SM8 API)
 19. **Not done** - New SM8 company creation for unmatched names
 
 ### Key Source Files
@@ -204,3 +227,4 @@ All 38 stale/superseded/draft/test GRD workflows archived. Full list includes: G
 - customers-2026-06-02.csv: Raw CF contacts export (15,080 rows, 45 columns)
 - customers_fixed.csv: Normalized CF CSV (generated by fix_csv.py)
 - fix_csv.py: Python script that re-normalized column names and padded variable-length rows
+- unmatched_sites_455.json: 455 Customer Sites rows without SM8 UUIDs (needs company creation or manual review)
