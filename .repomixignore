@@ -2,8 +2,15 @@
 # REPOMIX TARGETED DATA BLOCKS (Protects Your Token Budget)
 # ====================================================================
 # Block the massive database files inflating your context
-Customer Job History.csv
-prospects-2026-05-23.csv
+data/raw/Customer Job History.csv
+data/raw/prospects-2026-05-23.csv
+data/raw/customers-2026-06-02.csv
+
+# Block large export files (audit/temp — not needed for context)
+data/exports/customer_notes_latest.tsv
+data/exports/unmatched_sites_455.json
+data/exports/export_Matching_Exceptions.csv
+data/exports/export_Customer_Notes.csv
 
 # Block recursive output files so repomix never bundles itself
 repomix-output.md
