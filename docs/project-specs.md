@@ -4,7 +4,7 @@
 Build a Postgres-backed import, review, and write pipeline for GRD Guttering / Katwill Services as they move customer records and quoting activity into ServiceM8.
 
 ## Background
-The conversation with Kylie establishes these key points:
+The source conversation establishes these key points:
 - The Customer Factor does not provide a conventional API for pulling historical data.
 - Historical customer/job data is available as CSV exports.
 - ServiceM8 is the destination system.
@@ -14,7 +14,7 @@ The conversation with Kylie establishes these key points:
 - Quote-open tracking is not a native ServiceM8 feature, so the implementation needs an approved workaround.
 
 ## Source Files Reviewed
-- `Email Conversation with Kylie.txt`
+- `Email Conversation.txt`
 - `Customer Job History.csv`
 - `prospects-2026-05-23.csv`
 - `Accepted quote email notification.pdf`
@@ -277,7 +277,7 @@ Use **autoMapInputData: true** in Google Sheets append operations when field cou
 ## Data Table Read Pattern
 Set **executeOnce: true** on all data table read nodes in linear workflows to prevent item multiplication.
 
-## Open Questions (need Kylie feedback)
+## Open Questions
 1. Quote notifications: ServiceM8 native or separate quoting system?
 2. Quote-open tracking: redirect bridge approach acceptable?
 
@@ -296,5 +296,5 @@ Set **executeOnce: true** on all data table read nodes in linear workflows to pr
 - [ ] Notes generated with consolidated job history per customer
 - [ ] Notes uploaded to ServiceM8 without duplicates
 - [ ] Quote notifications deliver emails on sent status
-- [ ] Quote-open tracking records views and notifies Kylie
+- [ ] Quote-open tracking records views and notifies the team
 - [ ] Full 24,870 job history + 5,272 prospect rows processed

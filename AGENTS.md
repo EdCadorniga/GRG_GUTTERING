@@ -4,7 +4,7 @@
 This repository captures the requirements and delivery plan for the GRD Guttering / Katwill Services ServiceM8 automation work.
 
 Primary source files (under `docs/`):
-- `docs/Email Conversation with Kylie.txt`
+- `docs/Email Conversation.txt`
 - `docs/assets/Accepted quote email notification.pdf`
 - `docs/assets/Quote opened email notification.pdf`
 - `data/samples/Customer Job History-sample.csv`
@@ -72,7 +72,8 @@ Primary source files (under `docs/`):
 | GRD_CustomerSites_Generate | IMj5uhFkElJWDcv5 | Manual | CF contacts + SM8 UUIDs → Google Sheets |
 | GRD_Set_Approval_Validation | QkNVzlIMWM5nUbEq | Manual | Set Approval_Status dropdown on column F |
 | GRD_RJS_Sites_Append | aoNiAnCCsCTkZWLu | Manual | Append RJS sites to Customer Sites tab |
-| GRD_Site_Import | 3xsqBGKnV8o4F07p | Manual + 10min | Approved rows → POST SM8 company.json (50/batch) |
+| GRD_Site_Import | 3xsqBGKnV8o4F07p | Manual + 10min | *(deactivated — replaced by cleanup)* |
+| GRD_Cleanup_Single_Site_Customers | seTKGjvK4YJMJIwi | Manual | Reads CustomerSitesForCleanup sheet, identifies single-site customers, marks Delete in sheet, deletes from SM8, marks Deleted in sheet |
 | GRD_QuoteEvent_Receiver | xsIKmyZb5t5TsZhG | SM8 Event Webhook | Receives SM8 native event webhooks for quote_sent, proposal_sent, proposal_viewed, quote_accepted — fetches job, routes, emails alert |
 | GRD_QuoteOpenBridge_v1 | LEcdO6TYQ2B1X9ia | Webhook GET | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
 | GRD_QuoteSent_Tracker | sdtvgdpvcdciB77W | 30min poll | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
@@ -125,7 +126,7 @@ Primary source files (under `docs/`):
 ├── .gitignore
 ├── .env                   ← API keys (gitignored)
 ├── docs/
-│   ├── Email Conversation with Kylie.txt
+│   ├── Email Conversation.txt
 │   ├── Customer Plan.md
 │   ├── project-specs.md
 │   └── assets/
