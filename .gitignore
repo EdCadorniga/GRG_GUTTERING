@@ -1,1 +1,17 @@
 .env
+
+# Local scratch scripts
+__temp_*.py
+temp_debug*.js
+check_csv_*.js
+check_jh_headers.js
+check_prospects.js
+
+# Local batch/export artifacts
+batch_*.json
+batch60_*.json
+pin_batch_*.json
+sm8_batch_*.json
+sm8_chunk_*.json
+sm8_mcp_batch_*.json
+sm8_tiny_*.json
