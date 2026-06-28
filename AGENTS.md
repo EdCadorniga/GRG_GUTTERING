@@ -64,31 +64,31 @@ Primary source files (under `docs/`):
 | GRD_HistoricalJobHistory_Ingest | 8mLRB5VpBKisvsUU | Manual | Ingest CSV into stg_job_history |
 | GRD_Prospects_Ingest | QAOmPf3a4dpBeQ61 | Manual | Ingest CSV into stg_prospects |
 | GRD_CF_Contacts_Ingest | tJhlMwIiaPRYtDp5 | Webhook | Ingest CF CSV into stg_cf_contacts |
-| GRD_Match_CSV_to_SM8 (v3) | 7kEUmyDsb8TFYizO | Manual | Exact name matching only |
+| GRD_Match_CSV_to_SM8 (v3) | 7kEUmyDsb8TFYizO | Manual + Webhook | Exact + fuzzy name matching. *(fixed: IF node boolean comparison → string, published 2026-06-28)* |
 | GRD_CF_Match_to_UUID | BNcVsucXZc9c0oyk | Manual | Match CF contacts to SM8 UUIDs |
 | GRD_Note_Generate_Batch | KJA8xCVC1ajwBDit | Manual | Postgres IN filter, 50/batch |
-| GRD_Note_Upload_Batch | ipD5QpBO7ffBHPEK | Manual + 5min | Upload 50 notes/run |
-| GRD_ServiceM8_Duplicate_and_Placeholder_Notes_Cleanup | QFFLC3wOzQOynhas | 10min | Paginate + delete dup notes |
+| GRD_Note_Upload_Batch | ipD5QpBO7ffBHPEK | Manual + 5min | Upload 50 notes/run. *(credential fixed 2026-06-28)* |
+| GRD_ServiceM8_Duplicate_and_Placeholder_Notes_Cleanup | QFFLC3wOzQOynhas | 10min | Paginate + delete dup notes. *(credentials OK, verified working)* |
 | GRD_CustomerSites_Generate | IMj5uhFkElJWDcv5 | Manual | CF contacts + SM8 UUIDs → Google Sheets |
 | GRD_Set_Approval_Validation | QkNVzlIMWM5nUbEq | Manual | Set Approval_Status dropdown on column F |
 | GRD_RJS_Sites_Append | aoNiAnCCsCTkZWLu | Manual | Append RJS sites to Customer Sites tab |
 | GRD_Site_Import | 3xsqBGKnV8o4F07p | Manual + 10min | *(deactivated — replaced by cleanup)* |
-| GRD_Cleanup_Single_Site_Customers | seTKGjvK4YJMJIwi | Manual | Reads CustomerSitesForCleanup sheet, identifies single-site customers, marks Delete in sheet, deletes from SM8, marks Deleted in sheet |
-| GRD_QuoteEvent_Receiver | xsIKmyZb5t5TsZhG | SM8 Event Webhook | Receives SM8 native event webhooks for quote_sent, proposal_sent, proposal_viewed, quote_accepted — fetches job, routes, emails alert |
+| GRD_Cleanup_Single_Site_Customers | seTKGjvK4YJMJIwi | Manual + 10min | Reads CustomerSitesForCleanup sheet, identifies single-site customers, marks Delete in sheet, deletes from SM8, marks Deleted in sheet. *(credential fixed 2026-06-28)* |
+| GRD_QuoteEvent_Receiver | xsIKmyZb5t5TsZhG | SM8 Event Webhook | Receives SM8 native event webhooks (quote_sent, proposal_sent, proposal_viewed, quote_accepted) — fetches job, routes, emails alert. *(all 4 event webhooks active, OK)* |
 | GRD_QuoteOpenBridge_v1 | LEcdO6TYQ2B1X9ia | Webhook GET | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
 | GRD_QuoteSent_Tracker | sdtvgdpvcdciB77W | 30min poll | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
 | GRD_QuoteAccepted_Tracker | u6qdYM5qyiqKcAp5 | 30min poll | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
 | KAT_QuoteOpenBridge | MyqBzn4gARYShwhb | Webhook GET | *(active but pending replacement by SM8 webhooks)* |
-| KAT_QuoteSent_Tracker | C51R73lpe7tsmqWT | 30min poll | *(active but pending replacement by SM8 webhooks)* |
-| KAT_QuoteAccepted_Tracker | XZ7PwspH6UeShjGK | 30min poll | *(active but pending replacement by SM8 webhooks)* |
+| KAT_QuoteSent_Tracker | C51R73lpe7tsmqWT | 30min poll | *(fixed: credential reattached 2026-06-28, verified success)* |
+| KAT_QuoteAccepted_Tracker | XZ7PwspH6UeShjGK | 30min poll | *(fixed: credential reattached 2026-06-28, verified success)* |
 
 ### Project Status Summary
 
 **Data ingested:** 15K CF contacts, 51K job history rows, 5K prospects, 2.4K SM8 companies
 **Match results:** 1,925 exact name matches (17.4%); 1,647 CF→SM8 UUIDs; all 3,997 Customer Sites have UUIDs
 **Notes:** 1,712 JH + 180 PR + 202 "No records" = all 1,925 covered. 0 placeholders.
-**Site import:** Active, 50/batch, 200ms delay, 10-min schedule. Reads approved rows → parse AU address → POST company.json
-**Quote tracking:** Quote-sent and quote-accepted trackers active. QuoteOpenBridge v1 deployed (webhook 302 redirect), but both being replaced by native SM8 event webhooks.
+**Site import:** Deactivated (replaced by Cleanup workflow). Active every 10 min.
+**Quote tracking:** GRD event webhooks active (4 subscriptions, verified working). KAT polling trackers credential-fixed and running (verified success 2026-06-28). KAT_QuoteOpenBridge still active but pending replacement by webhooks.
 
 ### Next Steps (ordered)
 1. **Id-chain fallback matching** for ~2,321 unmatched CF names (CF Id → JH/PR Id → customer_name → UUID lookup)
