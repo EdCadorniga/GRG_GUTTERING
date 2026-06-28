@@ -81,6 +81,7 @@ Primary source files (under `docs/`):
 | KAT_QuoteOpenBridge | MyqBzn4gARYShwhb | Webhook GET | *(active but pending replacement by SM8 webhooks)* |
 | KAT_QuoteSent_Tracker | C51R73lpe7tsmqWT | 30min poll | *(fixed: credential reattached 2026-06-28, verified success)* |
 | KAT_QuoteAccepted_Tracker | XZ7PwspH6UeShjGK | 30min poll | *(fixed: credential reattached 2026-06-28, verified success)* |
+| GROUNDUP_PhoneCall_2Day_Reminder | gN77glGM2rZkTxOf | Daily 8am | Polls SM8 for Phone Call badge jobs, emails 2-day reminder to admin+michael@groundupmaintenance.com.au, writes note, clears badge. *(2026-06-28: added michael@ to recipients)* |
 
 ### Project Status Summary
 
