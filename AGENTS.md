@@ -32,6 +32,7 @@ Primary source files (under `docs/`):
 
 ### n8n Environment
 - Instance: https://automation.katwillservices.com.au
+- Version: Upgraded (post 2026-06-28 — exact version TBC; check n8n UI footer)
 - Project ID: HfMlqgFS6NFMj6hI ("Automations Server <admin@sm8setup.com.au>")
 - Review Sheet: https://docs.google.com/spreadsheets/d/19CU-Ud4KGSZQtkvZoENvXen95R-7T1xRisY3aTH6j9Y/edit
 
