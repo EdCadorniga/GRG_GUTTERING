@@ -75,7 +75,7 @@ Primary source files (under `docs/`):
 | GRD_RJS_Sites_Append | aoNiAnCCsCTkZWLu | Manual | Append RJS sites to Customer Sites tab |
 | GRD_Site_Import | 3xsqBGKnV8o4F07p | Manual + 10min | *(deactivated — replaced by cleanup)* |
 | GRD_Cleanup_Single_Site_Customers | seTKGjvK4YJMJIwi | Manual + 10min | Reads CustomerSitesForCleanup sheet, identifies single-site customers, marks Delete in sheet, deletes from SM8, marks Deleted in sheet. *(credential fixed 2026-06-28)* |
-| GRD_QuoteEvent_Receiver | xsIKmyZb5t5TsZhG | SM8 Event Webhook | Receives SM8 native event webhooks (quote_sent, proposal_sent, proposal_viewed, quote_accepted) — fetches job, routes, emails alert. *(all 4 event webhooks active, OK)* |
+| GRD_QuoteEvent_Receiver | xsIKmyZb5t5TsZhG | SM8 Event Webhook | Receives SM8 native event webhooks (quote_sent, proposal_sent, proposal_viewed, quote_accepted) — fetches job, routes, emails alert. Accepted alerts use deduplicated material item names only. *(published version 515f4d5b-df2e-4958-b2f5-750e4bd4cac0)* |
 | GRD_QuoteOpenBridge_v1 | LEcdO6TYQ2B1X9ia | Webhook GET | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
 | GRD_QuoteSent_Tracker | sdtvgdpvcdciB77W | 30min poll | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
 | GRD_QuoteAccepted_Tracker | u6qdYM5qyiqKcAp5 | 30min poll | *(deactivated — replaced by GRD_QuoteEvent_Receiver)* |
@@ -90,14 +90,14 @@ Primary source files (under `docs/`):
 **Match results:** 1,925 exact name matches (17.4%); 1,647 CF→SM8 UUIDs; all 3,997 Customer Sites have UUIDs
 **Notes:** 1,712 JH + 180 PR + 202 "No records" = all 1,925 covered. 0 placeholders.
 **Site import:** Deactivated (replaced by Cleanup workflow). Active every 10 min.
-**Quote tracking:** GRD event webhooks active (4 subscriptions, verified working). KAT polling trackers credential-fixed and running (verified success 2026-06-28). KAT_QuoteOpenBridge still active but pending replacement by webhooks.
+**Quote tracking:** GRD event webhooks active (4 subscriptions, verified working). Accepted-quote alerts use material item names only, with descriptions omitted and duplicate names removed. KAT polling trackers credential-fixed and running (verified success 2026-06-28). KAT_QuoteOpenBridge still active but pending replacement by webhooks.
 
 ### Next Steps (ordered)
 1. **Id-chain fallback matching** for ~2,321 unmatched CF names (CF Id → JH/PR Id → customer_name → UUID lookup)
 2. **Fuzzy matching** for remaining unmatched names (Dice coefficient or phone/email)
 3. **New SM8 company creation** for unmatched names with no existing company
 4. Re-run Note Generate & Upload with improved matching
-5. **Rebuild Phase 2 quote notifications using SM8 event webhooks** — replace polling trackers and bridge with `job.quote_sent`, `proposal.sent`, `proposal.viewed`, `job.quote_accepted` webhooks. No SM8 email template changes required.
+5. **Complete KAT quote-notification migration** — replace the remaining KAT polling trackers and bridge with the GRD-style `job.quote_sent`, `proposal.sent`, `proposal.viewed`, and `job.quote_accepted` webhook approach where appropriate. No SM8 email template changes required for the GRD workflow.
 
 ### Known Issues (n8n / ServiceM8)
 - `$credentials` NOT available in n8n Code nodes (sandboxed). Use HTTP Request node with OAuth2 credential instead.

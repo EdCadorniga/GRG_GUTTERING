@@ -46,8 +46,12 @@ ServiceM8 fires a `proposal.viewed` event whenever a proposal is accessed online
 ServiceM8 fires a `job.quote_accepted` event when a customer accepts a quote. We subscribe and send you an alert.
 
 - **No changes to your workflow** — accept quotes exactly as you do today
-- **Email**: customer name, quote number, **total amount**, work description, service location, contact details, and a prompt to schedule the work
+- **Email**: customer name, quote number, **total amount**, material item names, service location, contact details, and a prompt to schedule the work
+- **Work to be performed** uses the material item names supplied in the ServiceM8 event. Material descriptions, quantities, and prices are omitted; duplicate names are shown once, one per line.
+- If the accepted quote has no material item names, the field displays `N/A`.
 - **One alert per acceptance** — no duplicates
+
+The accepted-quote formatting is implemented in the published `GRD_QuoteEvent_Receiver` workflow (`xsIKmyZb5t5TsZhG`, version `515f4d5b-df2e-4958-b2f5-750e4bd4cac0`).
 
 ---
 

@@ -221,7 +221,9 @@ Headers: `Customer_Name`, `ServiceM8_UUID`, `Site_Address`, `Site_UUID`, `Source
 - Include quote identifier, customer identity, view count
 
 ### 5. Quote Accepted Notification
-- Include quote identifier, customer identity, accepted work, total
+- Include quote identifier, customer identity, material item names from the ServiceM8 quote event, and total
+- Display material item names only, one per line; omit descriptions, quantities, prices, and duplicate names
+- Display `N/A` when no material item names are present
 - Include scheduling prompt/next-step instruction
 
 ## Architecture
